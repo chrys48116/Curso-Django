@@ -1,23 +1,10 @@
-{% load static %}
-{% include 'recipes/partials/_head.html' %}
+{% extends 'base.html' %}
 
-<body>
-    {% include 'recipes/partials/_header.html' %}
-    {% include 'recipes/partials/_search.html' %}
+{% block content %}
+    <div class="main-content main-content-list container">
 
-    <main class="main-content-container">
-        <div class="main-content main-content-list container">
+        {% for recipe in recipes %}
             {% include 'recipes/partials/_recipe.html' %}
-            {% include 'recipes/partials/_recipe.html' %}
-            {% include 'recipes/partials/_recipe.html' %}
-            {% include 'recipes/partials/_recipe.html' %}
-            {% include 'recipes/partials/_recipe.html' %}
-            {% include 'recipes/partials/_recipe.html' %}
-            {% include 'recipes/partials/_recipe.html' %}
-            {% include 'recipes/partials/_recipe.html' %}
-            {% include 'recipes/partials/_recipe.html' %}
-        </div>
-    </main>
-    {% include 'recipes/partials/_footer.html' %}
-</body>
-</html>
+        {% endfor %}
+</div>
+{% endblock content %}
